@@ -171,35 +171,35 @@ function errorHandling() {
   console.log("Error Handling");
 }
 
-// CANCEL TOKEN
-function cancelToken() {
-  let source = axios.CancelToken.source();
+// // CANCEL TOKEN
+// function cancelToken() {
+//   let source = axios.CancelToken.source();
 
-  axios
-    .get("https://jsonplaceholder.typicode.com", {
-      cancelToken: source.token,
-    })
-    .then((res) => {
-      showOutput(res);
-    })
-    .catch((thrown) => {
-      if (axios.isCancel(thrown)) {
-        console.log("Request canceled", thrown.message);
-      } else {
-        // Handle other errors
-        console.error(thrown);
-      }
-    });
+//   axios
+//     .get("https://jsonplaceholder.typicode.com", {
+//       cancelToken: source.token,
+//     })
+//     .then((res) => {
+//       showOutput(res);
+//     })
+//     .catch((thrown) => {
+//       if (axios.isCancel(thrown)) {
+//         console.log("Request canceled", thrown.message);
+//       } else {
+//         // Handle other errors
+//         console.error(thrown);
+//       }
+//     });
 
-  const shouldCancel = true;
+//   const shouldCancel = true;
 
-  if (shouldCancel) {
-    // Delay the cancellation to ensure the request is sent
-    setTimeout(() => {
-      source.cancel("Request canceled");
-    }, 100);
-  }
-}
+//   if (shouldCancel) {
+//     // Delay the cancellation to ensure the request is sent
+//     setTimeout(() => {
+//       source.cancel("Request canceled");
+//     }, 100);
+//   }
+// }
 
 // INTERCEPTING REQUESTS & RESPONSES
 
